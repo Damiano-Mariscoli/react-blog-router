@@ -9,6 +9,7 @@ import { Content } from "./Content.jsx";
 import { ChiSiamo } from "./ChiSiamo.jsx";
 
 import DefaultLayout from "./DefaultLayout.jsx";
+import SinglePosts from "./components/SinglePost.jsx";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Route element={<DefaultLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/chi-siamo" element={<ChiSiamo />} />
-          <Route path="/languages" element={<Content />} />
+          <Route path="/posts" element={<Content />} />
+          <Route path="/posts/:id" element={<SinglePosts />} />
         </Route>
       </Routes>
     </BrowserRouter>
