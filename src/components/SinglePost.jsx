@@ -5,8 +5,6 @@ import axios from "axios";
 export default function SinglePosts() {
   const { id } = useParams();
   const [post, setPost] = useState([]);
-  post.tags = [];
-  useEffect(() => {}, []);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,24 +12,24 @@ export default function SinglePosts() {
       .get(`http://localhost:3000/posts/${id}`)
       .then((res) => setPost(res.data))
       .catch((err) => console.error(err));
-  }, []);
+  }, [id]);
+
   return (
     <>
       <div className="container">
         <div className="row">
           <div className="col">
             <div className="card">
-              <h1>{post.title}</h1>
+              <h1 className="card-title">{post.title}</h1>
               <img
-                className="w-50"
+                className="card-img"
                 src={`http://localhost:3000/images/${post.image}`}
                 alt=""
               />
-              <p>{post.content}</p>
+              <p className="card-text">{post.content}</p>
               <ul>
-                {post.tags.map((tag) => (
-                  <li>{tag}</li>
-                ))}
+                {post.tags &&
+                  post.tags.map((tag, index) => <li key={index}>{tag}</li>)}
               </ul>
             </div>
           </div>

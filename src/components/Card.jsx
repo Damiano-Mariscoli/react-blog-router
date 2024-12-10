@@ -28,7 +28,9 @@ export default function Card() {
                 <p className="card-text">{post.content}</p>
               </div>
               <div className="card-footer">
-                <Link to={`/posts/${post.id}`}>Home Page</Link>
+                <button className="btn btn-primary">
+                  <Link to={`/posts/${post.id}`}>Dettagli</Link>
+                </button>
               </div>
             </div>
           </div>
