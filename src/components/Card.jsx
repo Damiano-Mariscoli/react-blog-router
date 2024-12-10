@@ -12,23 +12,29 @@ export default function Card() {
   }, []);
 
   return (
-    <div className="d-flex container">
-      {posts.map((post) => (
-        <div key={post.id} className="card" style={{ width: "18rem" }}>
-          <img
-            src={`http://localhost:3000/images/${post.image}`}
-            className="card-img-top"
-            alt={post.title}
-          />
-          <div className="card-body">
-            <h5 className="card-title">{post.title}</h5>
-            <p className="card-text">{post.content}</p>
-            <a href="#" className="btn btn-primary">
-              Go somewhere
-            </a>
+    <div className="container mt-5">
+      <div className="row g-5">
+        {posts.map((post) => (
+          <div key={post.id} className="col-12 col-md-6 col-lg-4">
+            <div className="card h-100">
+              <img
+                src={`http://localhost:3000/images/${post.image}`}
+                className="card-img-top mh-100"
+                alt={post.title}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{post.title}</h5>
+                <p className="card-text">{post.content}</p>
+              </div>
+              <div className="card-footer">
+                <a href="#" className="btn btn-primary">
+                  Go somewhere
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
