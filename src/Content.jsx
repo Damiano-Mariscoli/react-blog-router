@@ -1,13 +1,11 @@
-import { languages } from "./data/languages.js";
+import Card from "./components/card";
 
 export function Content() {
   return (
     <>
-      <ul>
-        {languages.map((language) => (
-          <li key={language.id}>{language.title}</li>
-        ))}
-      </ul>
+      <div>
+        <Card />
+      </div>
     </>
   );
 }
