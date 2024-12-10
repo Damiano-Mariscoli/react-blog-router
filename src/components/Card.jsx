@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Card() {
   const [posts, setPosts] = useState([]);
@@ -27,9 +28,7 @@ export default function Card() {
                 <p className="card-text">{post.content}</p>
               </div>
               <div className="card-footer">
-                <a href="#" className="btn btn-primary">
-                  Go somewhere
-                </a>
+                <Link to={`/posts/${post.id}`}>Home Page</Link>
               </div>
             </div>
           </div>
