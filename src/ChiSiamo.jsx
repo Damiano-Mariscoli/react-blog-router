@@ -1,13 +1,12 @@
 export function ChiSiamo() {
   return (
-    <>
-      <h1>Chi siamo?</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
-        possimus eaque exercitationem repudiandae cupiditate nulla expedita
-        corrupti iusto qui illum vero ut rem ullam libero aliquam. Aspernatur
-        iure doloribus praesentium.
-      </p>
-    </>
+    <div className="container my-5 bg-dark text-light">
+      <div className="row justify-content-center">
+        <div className="col-md-12 text-center">
+          <h1 className="display-4">Chi siamo?</h1>
+          <hr className="my-4 bg-light" />
+        </div>
+      </div>
+    </div>
   );
 }

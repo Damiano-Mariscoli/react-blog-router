@@ -3,10 +3,11 @@ import MainNav from "../MainNav";
 export default function Header() {
   return (
     <>
-      <div>
-        <h1>Header</h1>
-        <MainNav />
-      </div>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+        <div className="container-fluid">
+          <MainNav />
+        </div>
+      </nav>
     </>
   );
 }

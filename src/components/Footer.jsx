@@ -1,3 +1,1 @@
-export default function Footer() {
-  return <>FOOTER</>;
-}
+export default function Footer() {}

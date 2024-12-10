@@ -16,28 +16,39 @@ export default function SinglePosts() {
 
   return (
     <>
-      <div className="container">
+      <div className="container mt-5 text-light bg-secondary">
         <div className="row">
-          <div className="col">
-            <div className="card">
-              <h1 className="card-title">{post.title}</h1>
+          <div className="col-md-8 offset-md-2">
+            <div className="card bg-dark text-light p-3">
               <img
-                className="card-img"
+                className="card-img-top p-3"
                 src={`http://localhost:3000/images/${post.image}`}
                 alt=""
               />
-              <p className="card-text">{post.content}</p>
-              <ul>
-                {post.tags &&
-                  post.tags.map((tag, index) => <li key={index}>{tag}</li>)}
-              </ul>
+              <div className="card-body ">
+                <h1 className="card-title">{post.title}</h1>
+                <p className="card-text">{post.content}</p>
+                <ul className="list-group list-group-flush">
+                  {post.tags &&
+                    post.tags.map((tag, index) => (
+                      <li
+                        className="list-group-item bg-dark text-light"
+                        key={index}
+                      >
+                        {tag}
+                      </li>
+                    ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
 
-        <button onClick={() => navigate(-1)}>
-          torna alla pagina precedente
-        </button>
+        <div className="text-center mt-3">
+          <button onClick={() => navigate(-1)} className="btn btn-dark mb-5">
+            torna alla pagina precedente
+          </button>
+        </div>
       </div>
     </>
   );
